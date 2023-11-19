@@ -2,6 +2,8 @@ import pandas as pd
 import os
 from statistics import mean 
 
+#True defenition from https://en.wikipedia.org/wiki/Performance_rating_(chess)
+
 def expected_score(opponent_ratings: list[float], own_rating: float) -> float:
     """How many points we expect to score in a tourney with these opponents"""
     return sum(
@@ -26,7 +28,7 @@ def performance_rating(opponent_ratings: list[float], score: float) -> int:
 
 
 
-
+#perf_linear from https://www.hirmulintu.fi/juha/chess/en/performance_calculator.shtml
 
 def perf_linear(opponent_ratings: list[float], score: float) -> int:
     if score < 0 or 2 * len(opponent_ratings) < score:
@@ -34,6 +36,8 @@ def perf_linear(opponent_ratings: list[float], score: float) -> int:
     if len(opponent_ratings)==0:
         return -1
     return round(mean(opponent_ratings) + 8*((score/ len(opponent_ratings))*100 - 50));
+    
+#perf_fide from https://www.hirmulintu.fi/juha/chess/en/performance_calculator.shtml
 
 def perf_fide(ratings: list[float], double_score: float) -> int:
     if double_score < 0 or 2 * len(ratings) < double_score:
