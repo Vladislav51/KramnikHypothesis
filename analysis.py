@@ -81,7 +81,7 @@ folder=r'C:\Users\user\Documents\chess\xlsx' #папка с исходными X
 turnList=os.listdir(folder)# получаем список файлов турниров
 
 
-performanceTable=dict.fromkeys('Hikaru',{'OpponentRatings710':[],'points710':0,'OpponentRatings11prizes':[],'points11prizes':0,'OpponentRatings11noprizes':[],'points11noprizes':0})
+performanceTable=dict.fromkeys(['Hikaru'],{'OpponentRatings710':[],'points710':0,'OpponentRatings11prizes':[],'points11prizes':0,'OpponentRatings11noprizes':[],'points11noprizes':0})
 
     
 for file in turnList:
